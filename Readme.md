@@ -16,4 +16,4 @@ DOCKERFILE
     Dockerfile (write code)
 	      FROM almaliunx 
 		  RUN yum install nginx -y 
-		  
+		  # Docker
