@@ -1,0 +1,2 @@
+ FROM almalinux
+ ADD github.com/trussworks/terrafrom-aws-s3-private-bucket/blob/main/main.tf

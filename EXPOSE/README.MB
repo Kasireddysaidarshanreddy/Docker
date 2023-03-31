@@ -1,0 +1,4 @@
+ EXPOSE 
+
+ EXPOSE instruction is useful to tell the user of the image about the ports and protocols images/container is opening images/container.
+ it will not have any functionally it used only to tell information.

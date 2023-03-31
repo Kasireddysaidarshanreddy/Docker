@@ -1,0 +1,5 @@
+ARG VERSION  
+FROM almalnux:${VERSION}
+ARG GREETING 
+RUN echo "$GRETTING"
+RUN echo "$VERSION"

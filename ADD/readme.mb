@@ -1,0 +1,55 @@
+
+ADD 
+
+ADD is same as copy .It is useful to copy files from local to container. But it has 2 extra files capabilities.
+
+1. ADD can download the file directory from internet to the container. 
+2. ADD can untar/unzip the file directly into the container.
+
+COPY dnt have to capablity to download form internet 
+
+ADD 
+dockerfile 
+  FROM almalinux
+  ADD url/temp
+  
+ 
+ 
+ example:- 
+ FROM almalinux
+ ADD github.com/trussworks/terrafrom-aws-s3-private-bucket/blob/main/main.tf
+ 
+and push to git hub and pull to instance 
+
+then to go file run command 
+cd ../ADD/
+docker build -t add:v1 .
+
+it pull the image 
+
+then --- command ----- docker run -it add:v1 
+   you get the run the docker image and connect to bash  
+
+
+
+There you can use zip and tar file in add file by unziping this 
+EXAMPLE:-
+
+FROM almalinux
+ ADD github.com/trussworks/terrafrom-aws-s3-private-bucket/blob/main/main.tf
+ ADD apache-tomcat-9.0.73-embed.tar.gz/temp/
+ 
+   THERE WE ARE GVING ADD [SOURCE] [DESTAION]
+ 
+Run this file and now till unzip the file
+and git push and git pull in instance 
+
+go to add directory then 
+docker build -t add:v1 .
+docker run -it add:v1 .
+cd /tmp/
+ls -l
+cd apache-tomcat-9.0.13-embed 
+ls -l
+
+there you can see the file all 

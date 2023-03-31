@@ -1,0 +1,63 @@
+ARG 
+
+ARG is used to supply few avariables for image creation 
+only for image creation 
+ARG is the only instruction you can use berfore FROM. ARG declared before cant be accessed.
+
+
+
+
+Docker build is image creation 
+
+docker file 
+FROM or ARG u can use 
+
+ARG VERSION  
+FROM almalnux:${VERSION}
+
+SAVe and pull rto instanace 
+
+cd ARG 
+docker build -t arg:v1 --build-arg VERSION=8 .
+
+ --build-arg VERSION=8  this tag should be there for version 
+ 
+ARG VERSION  
+FROM almalnux:${VERSION}
+RUN echo$VERSION 
+
+it will not work 
+
+ARG VERSION  
+FROM almalnux:${VERSION}
+ARG GREETING 
+RUN echo "$GRETTING"
+RUN echo "$VERSION"
+
+git pusuh and pull
+docker build -t arg:v1 --build-arg VERSION=9 --build-arg GREEETING=hello .
+
+you can see the it run hello and version. thre you can see hello but no version is printed.
+
+
+the below three are un used.
+ARG GREETING =" hi good morning"
+RUN echo "$GRETTING"
+RUN echo "$VERSION"
+
+
+------
+USING ENV AND ARG 
+
+
+ARG VERSION  
+FROM almalnux:${VERSION}
+ARG GREETING = " Hi Good Morning"
+ENV GREET= ${GREETING}
+RUN echo "$GRETTING"
+RUN echo "$VERSION"
+
+
+Create one env variable and assign the value of ARG to that 
+then we can access ARG values through env both in images and conatiner 
+

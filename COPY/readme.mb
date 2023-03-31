@@ -1,0 +1,82 @@
+
+COPY 
+
+copy instruction is useful to copy the files from local to image 
+That file should available where you file is there.
+
+
+COPY
+
+ Dockerfile 
+ 
+ FROM almalinux:8
+ RUN yum install nginx -y 
+ RUN rm -rf /usr/share/nginx/html/index.html
+ COPY qi/usr/share/nginx/html 
+ 
+ 
+
+Imp -- you have website folder in local that should be copy folder 
+there qi is website and it is store in usr/share/nginx/html  -- folder 
+
+
+Then push and pull after the docker build go to copy folder 
+
+docker build -t copy:v1 . ----> command 
+
+
+there you after file need to have one cmd command to runing 
+
+
+COPY
+
+ Dockerfile 
+ 
+ FROM almalinux:8
+ RUN yum install nginx -y 
+ RUN rm -rf /usr/share/nginx/html/index.html
+ COPY qi/usr/share/nginx/html 
+ CMD ["nginx" , "-g" , "Daemon off;"]
+
+
+
+then git pull and run docker command 
+
+docker run -d -p 8080:80 copy:v1
+
+now in crome ip and port you get your website 
+
+   RUN rm -rf /usr/share/nginx/html/index.html 
+     used the above command to remove the front page of nignx page \
+   RUN rm -rf /usr/share/nginx/html/index.html
+      this copy is used for local disk 
+   COPY qi/usr/share/nginx/html
+      copy in this location 
+   
+   
+ THERE WE ARE REMOVING AND COPY THE YOUR FILE IN INDEX.HTML FILE..
+   
+   
+   Now go to cd /user/share/nginux/html ---- dicrectory 
+   and remove index.html by command by above --- RUN rm -rf /usr/share/nginx/html/index.html
+   
+ YOu get any error like mirror list -- due to os which you are using 
+ 
+   
+There if you are using the a bare mimum os and and install the application there you need to run both we need to keep bare minum os we eneter the command 
+
+CMD ----- CMD ["nginx" , "-g" , "Daemon off;"]
+
+SO docker file should have one cmd comamnd to run infinate times.
+
+
+TO push the docker above file to docker hub 
+1. you need to login and username and password 
+2. BY command Docker push copy:v1 -- use this command and push 
+3. if you get requested access to the resource is denied by the tag. There you need to re tag the image again 
+4. docker tag copy:v1 saidarshanreddy/copy:v1 .
+5. docker images 
+6.There you want to run the application in anthoer vm then you need to install docker and 
+7. Then --- docker run -d -p 80:80 saidarshanreddy/copy:v1 
+8. it pull to your instance 
+9. there we package the conatiner and  

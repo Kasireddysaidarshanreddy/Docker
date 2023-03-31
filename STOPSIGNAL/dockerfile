@@ -1,0 +1,7 @@
+# stopsignal is used for container go to exist.
+# sotpsignal is used to how to exit the container 
+#    by deafult docker request for exit and wait for some time 
+#    if it is not existing it can	force kill 
+# when your conatainer received stopsignal your application can perform 
+#    you can close DB connection
+#    you can do some backup
